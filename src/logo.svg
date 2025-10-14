@@ -1,0 +1,16 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Infinity symbol -->
+  <path d="M 140 120 C 140 90, 170 90, 200 120 C 230 90, 260 90, 260 120 C 260 150, 230 150, 200 120 C 170 150, 140 150, 140 120 Z" 
+        fill="none" 
+        stroke="#2BADE5" 
+        stroke-width="20" 
+        stroke-linecap="round"/>
+  
+  <!-- Text "Memora" -->
+  <text x="200" y="220" 
+        font-family="Georgia, serif" 
+        font-size="72" 
+        font-weight="normal" 
+        text-anchor="middle" 
+        fill="#1a4b5c">Memora</text>
+</svg>

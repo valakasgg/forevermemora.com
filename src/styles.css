@@ -1,0 +1,250 @@
+/* Memora Website Styles */
+
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Lato:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Accounts for the fixed header */
+}
+
+body {
+  font-family: 'Inter', 'Lato', 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+}
+
+/* Component Styles */
+
+/* Gradient Circles */
+.gradient-circles {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.gradient-circles::before {
+  content: "";
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, rgba(30, 115, 190, 0.08) 0%, transparent 80%);
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  top: 3em;
+  right: 3em;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.gradient-circles::after {
+  content: "";
+  width: 32rem;
+  height: 32rem;
+  background: radial-gradient(circle, rgba(107, 185, 240, 0.07) 0%, transparent 80%);
+  display: flex;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  bottom: 4em;
+  left: 1em;
+  animation: float 15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(10px, 10px) rotate(5deg); }
+}
+
+@keyframes gentle-float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(5px, 5px) rotate(2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(2px, 2px) rotate(1deg); }
+  }
+  
+  @keyframes gentle-float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(1px, 1px) rotate(0.5deg); }
+  }
+}
+
+.floating-circle {
+  animation: gentle-float 8s ease-in-out infinite alternate;
+  opacity: 0.7; /* More transparent to blend better with background */
+  z-index: 0; /* Ensure they stay below text */
+}
+
+/* Circle Images */
+.circle-image {
+  aspect-ratio: 1/1;
+  box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.08), 0 6px 8px -4px rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(249, 226, 133, 0.5); /* Lighter, more subtle yellow border */
+}
+
+.circle-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.circle-image:hover img {
+  transform: scale(1.05);
+}
+
+.circle-image--hero {
+  --size: clamp(10rem, 9.56vw + 6.941rem, 20rem);
+  width: var(--size);
+  height: var(--size);
+  transition: all 0.5s ease;
+}
+
+/* Hero image positioning for structured layout */
+.circle-image-container {
+  position: relative;
+  z-index: 2; /* Higher than floating circles but below text */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.circle-image-container .circle-image--hero {
+  position: relative; /* Change to relative position for structured layout */
+  margin: 1rem 0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* Hero image positioning for floating effects */
+.floating-circle {
+  position: absolute;
+  z-index: 1; /* Lower than text content but visible */
+  pointer-events: none; /* Prevents interaction with elements behind */
+  opacity: 0.7; /* Make floating circles more subtle */
+  filter: saturate(0.9) brightness(1.05); /* Slightly different look for decorative circles */
+}
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #FAFAF8;
+  color: #0D2C54;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus States */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 115, 190, 0.4);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Card Components */
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Button Animations */
+.btn-animate {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animate::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: -10%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.btn-animate:hover::after {
+  transform: translateX(100%);
+}
+
+/* Component Color Overrides */
+.w-6.h-6.mr-2.flex-shrink-0.text-accent {
+  color: #1E73BE; /* Use primary blue for checkmarks */
+}
+
+.w-10.h-10.text-accent\/20 {
+  color: rgba(107, 185, 240, 0.4); /* Use sky gradient for quotes with some transparency */
+}
+
+.h-5.w-5.mr-2.text-accent {
+  color: #1E73BE; /* Use primary blue for icons */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .circle-image--hero {
+    position: relative;
+    --size: clamp(5rem, 4vw + 3.5rem, 8rem);
+    margin: 0.5rem;
+    border-width: 2px;
+  }
+  
+  .mobile-circles-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 2rem 0;
+    position: relative;
+    z-index: 2; /* Higher than floating circles */
+  }
+  
+  .floating-circle {
+    display: none; /* Hide floating circles on mobile for better performance and clarity */
+  }
+}
+
+/* Medium screens */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .circle-image-container {
+    gap: 1rem;
+  }
+  
+  .circle-image-container .circle-image--hero {
+    --size: clamp(8rem, 5vw + 5rem, 12rem);
+  }
+  
+  .floating-circle {
+    opacity: 0.5; /* Even more subtle on medium screens */
+  }
+}

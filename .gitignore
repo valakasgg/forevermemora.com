@@ -1,0 +1,43 @@
+# Environment Variables (SECURE - NEVER UPLOAD THESE)
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+*.env
+
+# EXCEPT example files - these are templates and should be committed
+!env.development.example
+!.env.example
+
+# AWS Generated Files (keep source files in amplify/ directory)
+.amplify/
+amplify_outputs*
+amplifyconfiguration*
+# Note: amplify/ directory itself IS tracked (contains backend source)
+# Note: aws-exports.js IS tracked (contains configuration template)
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Build outputs
+dist/
+build/
+
+# amplify
+.amplify
+amplify_outputs*
+amplifyconfiguration*

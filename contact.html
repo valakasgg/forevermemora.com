@@ -1,0 +1,652 @@
+<!-- Built by Alisha Thomas @ EightySeven Web https://eightysevenweb.com 👋 -->
+<!DOCTYPE  <section id="main-content" class="pt-32 pb-16">
+<html lang="en">
+<head>
+  <link rel="icon" href="./src/img/favicon.ico" type="image/svg+xml" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Memora</title>
+  <meta name="description" content="Get in touch with our team at Memora. We're here to answer your questions about our AI voice generator technology.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'infinity-blue': '#1E73BE', /* Infinity Blue - Primary */
+            'deep-navy': '#0D2C54', /* Deep Navy */
+            'sky-gradient': '#6BB9F0', /* Sky Gradient */
+            'soft-gold': '#F9E285', /* Soft Gold - used sparingly */
+            'stone-grey': '#6E6E6E', /* Stone Grey */
+            'warm-white': '#FAFAF8', /* Warm White */
+            'action': '#1E73BE',
+            'action-hover': '#0D2C54',
+            'action-light': '#6BB9F0',
+            'accent': '#F9E285',
+            'accent-light': '#6BB9F0',
+            'accent-hover': '#E6CC5C',
+          },
+          fontFamily: {
+            'serif': ['Merriweather', 'serif'],
+            'sans': ['Inter', 'Lato', 'Source Sans Pro', 'sans-serif'],
+          },
+          spacing: {
+            '128': '32rem',
+          },
+          borderRadius: {
+            'xl': '1rem',
+            '2xl': '1.5rem',
+          },
+          boxShadow: {
+            'soft': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01)',
+            'card': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body class="bg-warm-white text-stone-grey">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-neutral-50/95 backdrop-blur-sm shadow-soft">
+    <div class="container mx-auto px-4 md:px-8 py-6 flex items-center justify-between">
+      <a href="/" class="w-48 md:w-60 transition-transform duration-300 hover:scale-105 relative">
+        <img src="./src/logo.svg" alt="Memora logo" class="w-full absolute max-h-[130px] left-0 top-[-70px]">
+      </a>
+      
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a href="index.html" class="font-semibold text-action hover:text-action-light transition duration-300 relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-accent-light after:transition-all hover:after:w-full" data-translate="nav-home">Home</a>
+        <a href="index.html#how-it-works" class="font-semibold text-action hover:text-action-light transition duration-300 relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-accent-light after:transition-all hover:after:w-full" data-translate="nav-how-it-works">How It Works</a>
+        <a href="index.html#testimonials" class="font-semibold text-action hover:text-action-light transition duration-300 relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-accent-light after:transition-all hover:after:w-full" data-translate="nav-testimonials">Testimonials</a>
+        <a href="index.html#features" class="font-semibold text-action hover:text-action-light transition duration-300 relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-accent-light after:transition-all hover:after:w-full" data-translate="nav-features">Features</a>
+        <a href="index.html#pricing" class="bg-action text-neutral-50 font-semibold py-2.5 px-6 rounded-lg hover:bg-action-hover transition-all duration-300 shadow-soft hover:shadow btn-animate" data-translate="nav-pricing">Pricing</a>
+        
+        <!-- Language Selector -->
+        <div class="relative language-selector">
+          <button id="language-dropdown-btn" class="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-neutral-100 transition-colors">
+            <img id="current-flag" src="./src/img/us.svg" alt="Current language flag" class="w-5 h-5">
+            <span id="current-language" class="text-sm font-medium" data-translate="language">Language</span>
+            <svg class="w-4 h-4 transition-transform" id="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="language-dropdown" class="language-dropdown absolute top-full right-0 mt-2 w-48 bg-white border border-neutral-200 rounded-lg shadow-lg z-50 opacity-0 invisible transform scale-95 transition-all duration-200">
+            <button onclick="setLanguage('en')" class="w-full flex items-center space-x-3 px-4 py-3 hover:bg-neutral-50 first:rounded-t-lg">
+              <img src="./src/img/us.svg" alt="US Flag" class="w-5 h-5">
+              <span class="font-medium" data-translate="english-us">English (US)</span>
+            </button>
+            <button onclick="setLanguage('id')" class="w-full flex items-center space-x-3 px-4 py-3 hover:bg-neutral-50 last:rounded-b-lg border-t border-neutral-100">
+              <img src="./src/img/indonesia.svg" alt="Indonesian Flag" class="w-5 h-5">
+              <span class="font-medium" data-translate="bahasa-indonesia">Bahasa Indonesia</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+      
+      <button id="mobile-menu-button" class="lg:hidden text-action p-2 rounded-md hover:bg-neutral-100 transition" aria-label="Toggle mobile menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Improved Mobile Menu - Slide from right instead of full screen -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-4/5 max-w-sm bg-neutral-50 z-50 transform translate-x-full lg:hidden overflow-visible">
+      <div class="p-6 h-full flex flex-col">
+        <div class="flex justify-end mb-8">
+          <button id="close-menu-button" class="p-2 text-action hover:text-accent rounded-full hover:bg-neutral-100" aria-label="Close mobile menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex flex-col space-y-5">
+          <a href="index.html" class="text-lg font-semibold text-action hover:text-action-light transition py-2" data-translate="nav-home">Home</a>
+          <a href="index.html#how-it-works" class="text-lg font-semibold text-action hover:text-action-light transition py-2" data-translate="nav-how-it-works">How It Works</a>
+          <a href="index.html#testimonials" class="text-lg font-semibold text-action hover:text-action-light transition py-2" data-translate="nav-testimonials">Testimonials</a>
+          <a href="index.html#features" class="text-lg font-semibold text-action hover:text-action-light transition py-2" data-translate="nav-features">Features</a>
+          <a href="index.html#pricing" class="mt-4 bg-action text-neutral-50 font-semibold py-3 px-6 rounded-lg hover:bg-action-hover transition-all duration-300 text-center" data-translate="nav-pricing">Pricing</a>
+          
+          <!-- Mobile Language Selector -->
+          <div class="mt-6 pt-6 border-t border-neutral-200">
+            <p class="text-sm font-semibold text-neutral-600 mb-3" data-translate="language">Language</p>
+            <div class="space-y-2">
+              <button onclick="setLanguage('en')" class="w-full flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-neutral-100 transition-colors">
+                <img src="./src/img/us.svg" alt="US Flag" class="w-5 h-5">
+                <span data-translate="english-us">English (US)</span>
+              </button>
+              <button onclick="setLanguage('id')" class="w-full flex items-center space-x-3 px-3 py-2 rounded-lg hover:bg-neutral-100 transition-colors">
+                <img src="./src/img/indonesia.svg" alt="Indonesian Flag" class="w-5 h-5">
+                <span data-translate="bahasa-indonesia">Bahasa Indonesia</span>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="pt-32 pb-16">
+    <div class="container mx-auto px-4 md:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-deep-navy text-center mb-8" data-translate="contact_title">Contact Us</h1>
+      <p class="text-center text-lg max-w-3xl mx-auto mb-16" data-translate="contact_subtitle">We're here to help. Reach out to our team with any questions, concerns, or feedback about Memora's services.</p>
+      
+      <!-- Contact Section -->
+      <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="font-serif text-2xl text-deep-navy mb-6" data-translate="contact_form_title">Send Us a Message</h2>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg ring-1 ring-gray-100">
+                        <form id="contact-form" class="space-y-6">
+                            <!-- Hidden fields -->
+                            <input type="hidden" name="language" id="form-language-field" value="en">
+                            <input type="hidden" name="page" value="contact">
+                            <!-- Honeypot field for spam protection -->
+                            <div class="hidden" style="display: none;">
+                                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                            </div>
+                            <!-- Name field -->
+                            <div>
+                                <label class="block text-sm font-semibold text-deep-navy mb-2" data-translate="form_name_label">Full Name *</label>
+                                <input type="text" name="name" required="" data-translate-placeholder="form_name_placeholder" placeholder="Your full name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-infinity-blue transition">
+                            </div>
+                            <!-- Email field -->
+                            <div>
+                                <label class="block text-sm font-semibold text-deep-navy mb-2" data-translate="form_email_label">Email Address *</label>
+                                <input type="email" name="email" required="" data-translate-placeholder="form_email_placeholder" placeholder="your.email@example.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-infinity-blue transition">
+                            </div>
+                            <!-- Phone field -->
+                            <div>
+                                <label class="block text-sm font-semibold text-deep-navy mb-2" data-translate="form_phone_label">Phone Number</label>
+                                <input type="tel" name="phone" data-translate-placeholder="form_phone_placeholder" placeholder="+44 1234 567890" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-infinity-blue transition">
+                            </div>
+                            <!-- Subject field -->
+                            <div>
+                                <label class="block text-sm font-semibold text-deep-navy mb-2" data-translate="form_subject_label">Subject *</label>
+                                <select name="subject" required="" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-infinity-blue transition">
+                                    <option value="" data-translate="form_subject_select">Select a subject</option>
+                                    <option value="general" data-translate="form_subject_general">General Inquiry</option>
+                                </select>
+                            </div>
+                            <!-- Message field -->
+                            <div>
+                                <label class="block text-sm font-semibold text-deep-navy mb-2" data-translate="form_message_label">Message *</label>
+                                <textarea name="message" required="" rows="5" data-translate-placeholder="form_message_placeholder" placeholder="Tell us how we can help you..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-infinity-blue transition resize-none"></textarea>
+                            </div>
+                            <!-- Hidden tracking fields -->
+                            <input type="hidden" name="page" value="contact">
+                            <!-- Submit button -->
+                            <button type="submit" id="submit-btn" class="w-full bg-infinity-blue text-white py-3 px-6 rounded-lg font-semibold hover:bg-deep-navy transition-colors text-lg" data-translate="form_submit">Send Message</button>
+                        </form>
+                        <div id="form-status" class="mt-4 text-center hidden"></div>
+                        <div class="text-xs text-stone-grey mt-4 text-center" data-translate="form_response_time">We typically respond within 24 hours</div>
+                        
+                        <!-- Google Sheets form submission script -->
+                        <script>
+                            console.log('Script loaded - looking for contact form...');
+                            
+                            // Wait for DOM to be ready
+                            document.addEventListener('DOMContentLoaded', function() {
+                                console.log('DOM loaded');
+                                
+                                const form = document.getElementById('contact-form');
+                                console.log('Found form:', form);
+                                
+                                if (form) {
+                                    form.addEventListener('submit', async function(e) {
+                                        console.log('Form submitted!');
+                                        e.preventDefault();
+                                
+                                const submitBtn = document.getElementById('submit-btn');
+                                const statusDiv = document.getElementById('form-status');
+                                const originalBtnText = submitBtn.textContent;
+                                
+                                // Show loading state
+                                submitBtn.textContent = 'Sending...';
+                                submitBtn.disabled = true;
+                                statusDiv.classList.add('hidden');
+                                
+                                // Get form data
+                                const formData = new FormData(this);
+                                
+                                // Debug: Log form data
+                                console.log('Form data being sent:');
+                                for (let [key, value] of formData.entries()) {
+                                    console.log(key, value);
+                                }
+                                
+                                // Check honeypot
+                                if (formData.get('bot-field')) {
+                                    console.log('Honeypot triggered - blocking submission');
+                                    return; // Likely spam
+                                }
+                                
+                                try {
+                                    console.log('Sending request to SheetDB...');
+                                    
+                                    // Prepare data for SheetDB
+                                    const sheetData = {
+                                        "Timestamp": new Date().toISOString(),
+                                        "Name": formData.get('name') || '',
+                                        "Email": formData.get('email') || '',
+                                        "Phone": formData.get('phone') || '',
+                                        "Subject": formData.get('subject') || '',
+                                        "Message": formData.get('message') || '',
+                                        "Language": formData.get('language') || 'en',
+                                        "Page": formData.get('page') || 'contact',
+                                        "Package": formData.get('package') || ''
+                                    };
+                                    
+                                    console.log('Data being sent:', sheetData);
+                                    
+                                    const response = await fetch('https://sheetdb.io/api/v1/x4mfobs64msn4', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Accept': 'application/json',
+                                            'Content-Type': 'application/json',
+                                        },
+                                        body: JSON.stringify([sheetData])
+                                    });
+                                    
+                                    console.log('Response status:', response.status);
+                                    
+                                    if (response.ok) {
+                                        const result = await response.json();
+                                        console.log('Response data:', result);
+                                        
+                                        statusDiv.className = 'mt-4 text-center text-green-600 font-semibold';
+                                        statusDiv.textContent = 'Thank you! Your message has been sent successfully.';
+                                        this.reset(); // Clear form
+                                    } else {
+                                        // Log the error details from SheetDB
+                                        const errorText = await response.text();
+                                        console.log('Error response from SheetDB:', errorText);
+                                        throw new Error(`HTTP error! status: ${response.status}, response: ${errorText}`);
+                                    }
+                                } catch (error) {
+                                    console.error('Detailed error:', error);
+                                    console.error('Error message:', error.message);
+                                    console.error('Error stack:', error.stack);
+                                    statusDiv.className = 'mt-4 text-center text-red-600 font-semibold';
+                                    statusDiv.textContent = 'Sorry, there was an error sending your message. Please try again.';
+                                }
+                                
+                                // Reset button
+                                submitBtn.textContent = originalBtnText;
+                                submitBtn.disabled = false;
+                                statusDiv.classList.remove('hidden');
+                                    });
+                                } else {
+                                    console.error('Contact form not found!');
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div>
+                    <h2 class="font-serif text-2xl text-deep-navy mb-6" data-translate="contact_info_title">Contact Information</h2>
+                    
+                    <!-- Contact Cards -->
+                    <div class="space-y-6">
+                        <!-- Email -->
+                        <div class="bg-white rounded-xl p-6 shadow-md ring-1 ring-gray-100">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-infinity-blue rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-deep-navy" data-translate="contact_email_title">Email Us</h3>
+                                    <p class="text-stone-grey" data-translate="contact_email_sub">Get in touch via email</p>
+                                </div>
+                            </div>
+                            <div class="pl-16">
+                                <p class="text-infinity-blue font-semibold">support@forevermemora.com</p>
+                                <p class="text-sm text-stone-grey mt-1" data-translate="contact_email_response">Response within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md ring-1 ring-gray-100">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-infinity-blue rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-deep-navy" data-translate="contact_phone_title">Chat to Us</h3>
+                                    <p class="text-stone-grey" data-translate="contact_phone_sub">Speak directly with our team</p>
+                                </div>
+                            </div>
+                            <!-- <div class="pl-16">
+                                <p class="text-sm text-stone-grey mt-1" data-i18n="contact_phone_hours">Mon-Fri, 9AM-6PM GMT</p>
+                            </div> -->
+                        </div>
+                        <!-- Address -->
+                        <div class="bg-white rounded-xl p-6 shadow-md ring-1 ring-gray-100">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-infinity-blue rounded-full flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-deep-navy" data-translate="contact_address_title">Visit Us</h3>
+                                    <p class="text-stone-grey" data-translate="contact_address_sub">Our office location</p>
+                                </div>
+                            </div>
+                            <div class="pl-16">
+                                <p class="text-stone-grey">Visit Us.</p>
+                                <p class="text-stone-grey">71-75 Shelton Street</p>
+                                <p class="text-stone-grey">Covent Garden</p>
+                                <p class="text-stone-grey">London,</p>
+                                <p class="text-stone-grey">United Kingdom,</p>
+                                <p class="text-stone-grey">WC2H 9JQ</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Link -->
+                    <div class="mt-8 p-6 bg-soft-gold/10 rounded-xl">
+                        <h3 class="font-semibold text-deep-navy mb-2" data-translate="faq_title">Looking for answers?</h3>
+                        <p class="text-stone-grey text-sm mb-3" data-translate="faq_sub">Check our frequently asked questions for quick help.</p>
+                        <a class="text-infinity-blue font-semibold text-sm hover:underline" data-translate="faq_link" href="/#faq">View FAQ →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-warm-white py-8 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+          <div class="mb-4">
+              <a href="index.html">
+                  <div class="relative min-h-[80px] mb-8">
+                      <div class="absolute left-[50%] -translate-x-[50%] top-[-37px]">
+                          <img src="./src/logo.svg" alt="Memora Logo" class="w-full h-full max-h-[150px]" />
+                      </div>
+                  </div>
+              </a>
+              
+          </div>
+         <div class="text-sm text-stone-grey space-x-6">
+              <a href="privacy.html" class="hover:text-infinity-blue" data-i18n="footer_privacy">Privacy Policy</a>
+              <a href="terms.html" class="hover:text-infinity-blue" data-i18n="footer_terms">Terms of Service</a>
+              <a href="contact.html" class="hover:text-infinity-blue" data-i18n="footer_contact">Contact</a>
+          </div>
+          <p class="text-xs text-stone-grey mt-4">© 2025 Memora. <span data-i18n="footer_rights">All rights reserved.</span></p>
+      </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-action text-white p-3 rounded-full shadow-lg hidden hover:bg-action-hover transition-all duration-300 transform hover:scale-110 z-40">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+  
+  <script>
+    // Translation system
+    const translations = {
+      en: {
+        // Navigation
+        "nav-home": "Home",
+        "nav-how-it-works": "How It Works",
+        "nav-testimonials": "Testimonials",
+        "nav-features": "Features",
+        "nav-pricing": "Pricing",
+        language: "Language",
+        "english-us": "English (US)",
+        "bahasa-indonesia": "Bahasa Indonesia",
+        
+        // Contact page
+        contact_title: "Contact Us",
+        contact_subtitle: "We're here to help. Reach out to our team with any questions, concerns, or feedback about Memora's services.",
+        contact_form_title: "Send Us a Message",
+        contact_info_title: "Contact Information",
+        
+        // Form fields
+        form_name_label: "Full Name *",
+        form_name_placeholder: "Your full name",
+        form_email_label: "Email Address *",
+        form_email_placeholder: "your.email@example.com",
+        form_phone_label: "Phone Number",
+        form_phone_placeholder: "+44 1234 567890",
+        form_subject_label: "Subject *",
+        form_subject_select: "Select a subject",
+        form_subject_general: "General Inquiry",
+        form_message_label: "Message *",
+        form_message_placeholder: "Tell us how we can help you...",
+        form_submit: "Send Message",
+        form_response_time: "We typically respond within 24 hours",
+        
+        // Contact information
+        contact_email_title: "Email Us",
+        contact_email_sub: "Get in touch via email",
+        contact_email_response: "Response within 24 hours",
+        contact_phone_title: "Chat to Us",
+        contact_phone_sub: "Speak directly with our team",
+        contact_address_title: "Visit Us",
+        contact_address_sub: "Our office location",
+        
+        // FAQ section
+        faq_title: "Looking for answers?",
+        faq_sub: "Check our frequently asked questions for quick help.",
+        faq_link: "View FAQ →",
+        
+        // Footer
+        footer_privacy: "Privacy Policy",
+        footer_terms: "Terms of Service",
+        footer_contact: "Contact",
+        footer_rights: "All rights reserved."
+      },
+      id: {
+        // Navigation
+        "nav-home": "Beranda",
+        "nav-how-it-works": "Cara Kerja",
+        "nav-testimonials": "Testimoni",
+        "nav-features": "Fitur",
+        "nav-pricing": "Harga",
+        language: "Bahasa",
+        "english-us": "English (US)",
+        "bahasa-indonesia": "Bahasa Indonesia",
+        
+        // Contact page
+        contact_title: "Hubungi Kami",
+        contact_subtitle: "Kami di sini untuk membantu. Hubungi tim kami dengan pertanyaan, keluhan, atau umpan balik tentang layanan Memora.",
+        contact_form_title: "Kirimkan Pesan",
+        contact_info_title: "Informasi Kontak",
+        
+        // Form fields
+        form_name_label: "Nama Lengkap *",
+        form_name_placeholder: "Nama lengkap Anda",
+        form_email_label: "Alamat Email *",
+        form_email_placeholder: "email.anda@example.com",
+        form_phone_label: "Nomor Telepon",
+        form_phone_placeholder: "+62 123 4567 890",
+        form_subject_label: "Subjek *",
+        form_subject_select: "Pilih subjek",
+        form_subject_general: "Pertanyaan Umum",
+        form_message_label: "Pesan *",
+        form_message_placeholder: "Beri tahu kami bagaimana kami dapat membantu Anda...",
+        form_submit: "Kirim Pesan",
+        form_response_time: "Kami biasanya merespons dalam 24 jam",
+        
+        // Contact information
+        contact_email_title: "Email Kami",
+        contact_email_sub: "Hubungi melalui email",
+        contact_email_response: "Respons dalam 24 jam",
+        contact_phone_title: "Chat dengan Kami",
+        contact_phone_sub: "Berbicara langsung dengan tim kami",
+        contact_address_title: "Kunjungi Kami",
+        contact_address_sub: "Lokasi kantor kami",
+        
+        // FAQ section
+        faq_title: "Mencari jawaban?",
+        faq_sub: "Periksa pertanyaan yang sering diajukan untuk bantuan cepat.",
+        faq_link: "Lihat FAQ →",
+        
+        // Footer
+        footer_privacy: "Kebijakan Privasi",
+        footer_terms: "Syarat Layanan",
+        footer_contact: "Kontak",
+        footer_rights: "Seluruh hak cipta."
+      }
+    };
+
+    // Apply translations function
+    function applyTranslations(lang) {
+      const elements = document.querySelectorAll('[data-translate]');
+      elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+
+      // Handle placeholders
+      const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+      placeholderElements.forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          element.placeholder = translations[lang][key];
+        }
+      });
+
+      // Update language display
+      const currentLanguage = document.getElementById('current-language');
+      const currentFlag = document.getElementById('current-flag');
+      
+      if (currentLanguage && currentFlag) {
+        if (lang === 'id') {
+          currentLanguage.textContent = translations[lang].language || 'Bahasa';
+          currentFlag.src = './src/img/indonesia.svg';
+          currentFlag.alt = 'Indonesian Flag';
+        } else {
+          currentLanguage.textContent = translations[lang].language || 'Language';
+          currentFlag.src = './src/img/us.svg';
+          currentFlag.alt = 'US Flag';
+        }
+      }
+
+      // Update form language field
+      const formLangField = document.getElementById('form-language-field');
+      if (formLangField) {
+        formLangField.value = lang;
+      }
+    }
+
+    // Set language function
+    window.setLanguage = function(lang) {
+      localStorage.setItem('preferred-language', lang);
+      applyTranslations(lang);
+      
+      // Close dropdown after selection
+      const languageDropdown = document.getElementById('language-dropdown');
+      if (languageDropdown) {
+        languageDropdown.classList.remove('show');
+      }
+    };
+
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLanguage = localStorage.getItem('preferred-language') || 'en';
+      applyTranslations(savedLanguage);
+      
+      // Language dropdown functionality
+      const languageDropdownBtn = document.getElementById('language-dropdown-btn');
+      const languageDropdown = document.getElementById('language-dropdown');
+      const dropdownArrow = document.getElementById('dropdown-arrow');
+
+      if (languageDropdownBtn && languageDropdown) {
+        languageDropdownBtn.addEventListener('click', function() {
+          const isVisible = languageDropdown.classList.contains('show');
+          
+          if (isVisible) {
+            languageDropdown.classList.remove('show');
+            dropdownArrow.style.transform = 'rotate(0deg)';
+          } else {
+            languageDropdown.classList.add('show');
+            dropdownArrow.style.transform = 'rotate(180deg)';
+          }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!languageDropdownBtn.contains(event.target) && !languageDropdown.contains(event.target)) {
+            languageDropdown.classList.remove('show');
+            dropdownArrow.style.transform = 'rotate(0deg)';
+          }
+        });
+      }
+    });
+  </script>
+  
+  <style>
+    .language-dropdown.show {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+  </style>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const closeMenuButton = document.getElementById('close-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenuButton.setAttribute('aria-expanded', 'true');
+    });
+
+    closeMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+    });
+
+    // Back to top button
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.remove('hidden');
+      } else {
+        backToTopButton.classList.add('hidden');
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Set the timestamp when the form is submitted
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form[name="contact"]');
+      if (form) {
+        const timestampField = document.getElementById('timestamp');
+        if (timestampField) {
+          form.addEventListener('submit', function() {
+            timestampField.value = new Date().toISOString();
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

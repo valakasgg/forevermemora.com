@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memora Configuration Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .config-box { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        .success { color: green; } .error { color: red; } .info { color: blue; }
+        button { background: #1E73BE; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0D2C54; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Memora Configuration Test</h1>
+    
+    <div class="config-box">
+        <h3>Environment Detection</h3>
+        <p><strong>Current Hostname:</strong> <span id="hostname"></span></p>
+        <p><strong>Detected Environment:</strong> <span id="environment"></span></p>
+        <p><strong>AWS Amplify Env:</strong> <span id="aws-env"></span></p>
+    </div>
+
+    <div class="config-box">
+        <h3>Configuration Values</h3>
+        <p><strong>Stripe Key:</strong> <span id="stripe-key"></span></p>
+        <p><strong>API Base URL:</strong> <span id="api-url"></span></p>
+        <p><strong>Debug Mode:</strong> <span id="debug"></span></p>
+        <p><strong>Build Time:</strong> <span id="build-time"></span></p>
+    </div>
+
+    <div class="config-box">
+        <h3>Integration Tests</h3>
+        <button onclick="testStripeInit()">Test Stripe Initialization</button>
+        <button onclick="testApiCall()">Test API Call</button>
+        <div id="test-results"></div>
+    </div>
+
+    <div class="config-box">
+        <h3>Console Output</h3>
+        <div id="console-output" style="background: black; color: lime; padding: 10px; font-family: monospace; height: 200px; overflow-y: scroll;"></div>
+    </div>
+
+    <!-- Same scripts as main site -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="./src/amplify-config-inject.js"></script>
+    <script src="./src/config-amplify.js"></script>
+
+    <script>
+        // Capture console output
+        const originalLog = console.log;
+        const consoleOutput = document.getElementById('console-output');
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            consoleOutput.innerHTML += args.join(' ') + '\n';
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        };
+
+        // Wait for config to load
+        setTimeout(() => {
+            updateDisplay();
+        }, 100);
+
+        function updateDisplay() {
+            document.getElementById('hostname').textContent = window.location.hostname;
+            document.getElementById('environment').textContent = window.MemoraConfig?.environment || 'Not detected';
+            document.getElementById('aws-env').textContent = window.AWS_AMPLIFY_ENV || 'Not set';
+            
+            if (window.MemoraConfig) {
+                document.getElementById('stripe-key').textContent = 
+                    (window.MemoraConfig.get('STRIPE_PUBLISHABLE_KEY') || 'Not set').substring(0, 20) + '...';
+                document.getElementById('api-url').textContent = 
+                    window.MemoraConfig.get('API_BASE_URL') || 'Not set';
+                document.getElementById('debug').textContent = 
+                    window.MemoraConfig.get('DEBUG') || 'Not set';
+                document.getElementById('build-time').textContent = 
+                    window.MemoraConfig.get('BUILD_TIME') || 'Not set';
+            }
+        }
+
+        function testStripeInit() {
+            const results = document.getElementById('test-results');
+            
+            if (!window.MemoraConfig) {
+                results.innerHTML = '<p class="error">❌ MemoraConfig not loaded</p>';
+                return;
+            }
+
+            const stripeKey = window.MemoraConfig.get('STRIPE_PUBLISHABLE_KEY');
+            
+            if (!stripeKey || stripeKey.includes('your_') || stripeKey.includes('_here')) {
+                results.innerHTML = '<p class="error">❌ Stripe key not configured properly</p>';
+                return;
+            }
+
+            try {
+                const stripe = Stripe(stripeKey);
+                results.innerHTML = '<p class="success">✅ Stripe initialized successfully</p>';
+            } catch (error) {
+                results.innerHTML = `<p class="error">❌ Stripe initialization failed: ${error.message}</p>`;
+            }
+        }
+
+        function testApiCall() {
+            const results = document.getElementById('test-results');
+            
+            if (!window.MemoraConfig) {
+                results.innerHTML = '<p class="error">❌ MemoraConfig not loaded</p>';
+                return;
+            }
+
+            const apiUrl = window.MemoraConfig.get('API_BASE_URL');
+            results.innerHTML = `<p class="info">🔍 Testing API endpoint: ${apiUrl}</p>`;
+            
+            // This would fail in local dev (no API running), but shows the URL is configured
+            fetch(`${apiUrl}/health`)
+                .then(response => {
+                    results.innerHTML += `<p class="success">✅ API endpoint reachable (${response.status})</p>`;
+                })
+                .catch(error => {
+                    results.innerHTML += `<p class="info">ℹ️ API endpoint configured but not reachable (expected in local dev)</p>`;
+                });
+        }
+    </script>
+</body>
+</html>

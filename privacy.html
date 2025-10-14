@@ -1,0 +1,300 @@
+<!-- Built by Alisha Thomas @ EightySeven Web https://eightysevenweb.com 👋 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="./src/img/favicon.ico" type="image/svg+xml" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Memora</title>
+  <meta name="description" content="Our privacy policy explains how we collect, use, and protect your data when using Memora's AI voice generator services.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'infinity-blue': '#1E73BE', /* Infinity Blue - Primary */
+            'deep-navy': '#0D2C54', /* Deep Navy */
+            'sky-gradient': '#6BB9F0', /* Sky Gradient */
+            'soft-gold': '#F9E285', /* Soft Gold - used sparingly */
+            'stone-grey': '#6E6E6E', /* Stone Grey */
+            'warm-white': '#FAFAF8', /* Warm White */
+            'action': '#1E73BE',
+            'action-hover': '#0D2C54',
+            'action-light': '#6BB9F0',
+            'accent': '#F9E285',
+            'accent-light': '#6BB9F0',
+            'accent-hover': '#E6CC5C',
+          },
+          fontFamily: {
+            'serif': ['Merriweather', 'serif'],
+            'sans': ['Inter', 'Lato', 'Source Sans Pro', 'sans-serif'],
+          },
+          spacing: {
+            '128': '32rem',
+          },
+          borderRadius: {
+            'xl': '1rem',
+            '2xl': '1.5rem',
+          },
+          boxShadow: {
+            'soft': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01)',
+            'card': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body class="bg-warm-white text-stone-grey">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-neutral-50/95 backdrop-blur-sm shadow-soft">
+    <div class="container mx-auto px-4 md:px-8 py-6 flex items-center justify-between">
+      <a href="/" class="w-48 md:w-60 transition-transform duration-300 hover:scale-105 relative">
+        <img src="./src/logo.svg" alt="Memora logo" class="w-full absolute max-h-[130px] left-0 top-[-70px]">
+      </a>
+      
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a href="index.html" class="font-semibold text-action hover:text-action-light transition duration-300 relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-accent-light after:transition-all hover:after:w-full">Home</a>
+        <a href="index.html#how-it-works" class="font-semibold text-action hover:text-action-light transition duration-300 relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-accent-light after:transition-all hover:after:w-full">How It Works</a>
+        <a href="index.html#testimonials" class="font-semibold text-action hover:text-action-light transition duration-300 relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-accent-light after:transition-all hover:after:w-full">Testimonials</a>
+        <a href="index.html#features" class="font-semibold text-action hover:text-action-light transition duration-300 relative after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:w-0 after:bg-accent-light after:transition-all hover:after:w-full">Features</a>
+        <a href="index.html#pricing" class="bg-action text-neutral-50 font-semibold py-2.5 px-6 rounded-lg hover:bg-action-hover transition-all duration-300 shadow-soft hover:shadow btn-animate">Pricing</a>
+      </nav>
+      
+      <button id="mobile-menu-button" class="lg:hidden text-action p-2 rounded-md hover:bg-neutral-100 transition" aria-label="Toggle mobile menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Improved Mobile Menu - Slide from right instead of full screen -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-4/5 max-w-sm bg-neutral-50 z-50 transform translate-x-full lg:hidden overflow-visible">
+      <div class="p-6 h-full flex flex-col">
+        <div class="flex justify-end mb-8">
+          <button id="close-menu-button" class="p-2 text-action hover:text-accent rounded-full hover:bg-neutral-100" aria-label="Close mobile menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex flex-col space-y-5">
+          <a href="index.html" class="text-lg font-semibold text-action hover:text-action-light transition py-2">Home</a>
+          <a href="index.html#how-it-works" class="text-lg font-semibold text-action hover:text-action-light transition py-2">How It Works</a>
+          <a href="index.html#testimonials" class="text-lg font-semibold text-action hover:text-action-light transition py-2">Testimonials</a>
+          <a href="index.html#features" class="text-lg font-semibold text-action hover:text-action-light transition py-2">Features</a>
+          <a href="index.html#pricing" class="mt-4 bg-action text-neutral-50 font-semibold py-3 px-6 rounded-lg hover:bg-action-hover transition-all duration-300 text-center">Pricing</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="pt-32 pb-16">
+    <div class="container mx-auto px-4 md:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-deep-navy text-center mb-8">Privacy Policy</h1>
+      <p class="text-center text-lg max-w-3xl mx-auto mb-8">Last Updated: September 8, 2025</p>
+      <div class="max-w-4xl mx-auto mb-12">
+        <img src="./src/img/Elderly Couple.avif" alt="An elderly couple smiling together" class="w-full h-auto rounded-xl shadow-lg">
+      </div>
+      
+      <!-- Privacy Policy Content -->
+      <div class="max-w-4xl mx-auto prose prose-lg prose-headings:font-serif prose-headings:text-deep-navy prose-p:text-stone-grey">
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">Introduction</h2>
+          <p>Memora ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our AI voice generation service.</p>
+          <p>Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the service.</p>
+        </section>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">Information We Collect</h2>
+          <h3 class="text-xl font-semibold mb-3">Personal Data</h3>
+          <p>We may collect personal information that you voluntarily provide to us when you:</p>
+          <ul class="list-disc ml-6 mb-4 text-stone-grey">
+            <li>Register on our website</li>
+            <li>Upload voice samples</li>
+            <li>Submit payment information</li>
+            <li>Contact our customer support</li>
+            <li>Participate in surveys or promotions</li>
+          </ul>
+          
+          <p>This information may include:</p>
+          <ul class="list-disc ml-6 mb-4 text-stone-grey">
+            <li>Name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Billing information</li>
+            <li>Voice recordings</li>
+            <li>Text content for voice generation</li>
+          </ul>
+          
+          <h3 class="text-xl font-semibold mb-3">Technical Data</h3>
+          <p>We may automatically collect certain information when you visit our website, including:</p>
+          <ul class="list-disc ml-6 mb-4 text-stone-grey">
+            <li>IP address</li>
+            <li>Browser type and version</li>
+            <li>Device information</li>
+            <li>Operating system</li>
+            <li>Usage patterns and preferences</li>
+            <li>Referral source</li>
+          </ul>
+        </section>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">How We Use Your Information</h2>
+          <p>We use the information we collect to:</p>
+          <ul class="list-disc ml-6 mb-4 text-stone-grey">
+            <li>Create and maintain your account</li>
+            <li>Process and fulfill your requests for voice generation</li>
+            <li>Process payments</li>
+            <li>Improve our AI algorithms and service quality</li>
+            <li>Communicate with you about your account and updates</li>
+            <li>Respond to your inquiries and provide customer support</li>
+            <li>Send you marketing communications (with your consent)</li>
+            <li>Detect and prevent fraudulent activities</li>
+            <li>Comply with legal obligations</li>
+          </ul>
+        </section>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">Voice Data Processing</h2>
+          <p>When you upload voice samples to create AI-generated voices, we process this data with particular care:</p>
+          <ul class="list-disc ml-6 mb-4 text-stone-grey">
+            <li>Voice samples are used solely for the purpose of creating the AI voice model you request</li>
+            <li>We employ advanced security measures to protect voice data</li>
+            <li>Voice samples are never shared with third parties for marketing purposes</li>
+            <li>We retain voice samples only for as long as necessary to provide our services</li>
+          </ul>
+          
+          <p>By using our service, you confirm that you have proper authorization to use any voice samples you upload, especially those of deceased individuals, and that such use complies with all applicable laws.</p>
+        </section>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">Data Sharing and Disclosure</h2>
+          <p>We may share your information with:</p>
+          <ul class="list-disc ml-6 mb-4 text-stone-grey">
+            <li>Service providers who help us deliver our services</li>
+            <li>Payment processors to facilitate transactions</li>
+            <li>Legal authorities when required by law</li>
+            <li>Business partners with your explicit consent</li>
+          </ul>
+          
+          <p>We do not sell your personal data to third parties.</p>
+        </section>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">Your Rights</h2>
+          <p>Depending on your location, you may have rights regarding your personal data, including:</p>
+          <ul class="list-disc ml-6 mb-4 text-stone-grey">
+            <li>Access to your personal information</li>
+            <li>Correction of inaccurate data</li>
+            <li>Deletion of your data (subject to legal requirements)</li>
+            <li>Restriction of processing</li>
+            <li>Data portability</li>
+            <li>Objection to processing</li>
+            <li>Withdrawal of consent</li>
+          </ul>
+          
+          <p>To exercise these rights, please contact us using the information provided at the end of this policy.</p>
+        </section>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">Data Security</h2>
+          <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+        </section>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">International Data Transfers</h2>
+          <p>Your information may be transferred to, and maintained on, computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ. We ensure appropriate safeguards are in place to protect your information when transferred internationally.</p>
+        </section>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">Children's Privacy</h2>
+          <p>Our service is not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+        </section>
+        
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold mb-4">Changes to This Privacy Policy</h2>
+          <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.</p>
+        </section>
+        
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+          <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
+          <p class="font-semibold">Email: <a href="mailto:privacy@forevermemora.com" class="text-infinity-blue">privacy@forevermemora.com</a></p>
+          <p class="font-semibold">Postal Address:</p>
+          <p>Memora</p>
+          <p>71-75 Shelton Street</p>
+          <p>Covent Garden</p>
+          <p>London, United Kingdom, WC2H 9JQ</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-warm-white py-8 text-center">
+      <div class="max-w-4xl mx-auto px-4">
+          <div class="mb-4">
+              <a href="index.html">
+                  <div class="relative min-h-[80px] mb-8">
+                      <div class="absolute left-[50%] -translate-x-[50%] top-[-37px]">
+                          <img src="./src/logo.svg" alt="Memora Logo" class="w-full h-full max-h-[150px]" />
+                      </div>
+                  </div>
+              </a>
+              
+          </div>
+         <div class="text-sm text-stone-grey space-x-6">
+              <a href="privacy.html" class="hover:text-infinity-blue" data-i18n="footer_privacy">Privacy Policy</a>
+              <a href="terms.html" class="hover:text-infinity-blue" data-i18n="footer_terms">Terms of Service</a>
+              <a href="contact.html" class="hover:text-infinity-blue" data-i18n="footer_contact">Contact</a>
+          </div>
+          <p class="text-xs text-stone-grey mt-4">© 2025 Memora. <span data-i18n="footer_rights">All rights reserved.</span></p>
+      </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-action text-white p-3 rounded-full shadow-lg hidden hover:bg-action-hover transition-all duration-300 transform hover:scale-110 z-40">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+  
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const closeMenuButton = document.getElementById('close-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenuButton.setAttribute('aria-expanded', 'true');
+    });
+
+    closeMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+    });
+
+    // Back to top button
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.remove('hidden');
+      } else {
+        backToTopButton.classList.add('hidden');
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

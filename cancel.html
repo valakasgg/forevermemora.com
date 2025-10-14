@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./src/img/favicon.ico" type="image/svg+xml" />
+    <title>Payment Cancelled - Memora</title>
+    <meta name="description" content="Your payment was cancelled. You can try again anytime." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "infinity-blue": "#1E73BE",
+              "deep-navy": "#0D2C54",
+              action: {
+                DEFAULT: "#1E73BE",
+                hover: "#0D2C54",
+              },
+              accent: {
+                DEFAULT: "#0D2C54",
+                hover: "#0a233f",
+                light: "#F9E285",
+              },
+              neutral: {
+                50: "#FAFAF8",
+                100: "#f5f5f2",
+                200: "#ebebea",
+                300: "#d9d9d7",
+                400: "#b0b0ae",
+                500: "#8d8d8b",
+                600: "#6E6E6E",
+                700: "#5a5a5a",
+                800: "#3d3d3d",
+                900: "#212121",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap");
+    </style>
+</head>
+<body class="bg-neutral-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-neutral-200">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="./src/logo.svg" alt="Memora" class="h-8 w-auto" />
+                    <span class="text-xl font-bold text-action">Memora</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16">
+        <div class="max-w-2xl mx-auto text-center">
+            <!-- Cancel Icon -->
+            <div class="mb-8">
+                <div class="mx-auto w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Cancel Message -->
+            <h1 class="text-3xl md:text-4xl font-bold text-action mb-4">
+                Payment Cancelled
+            </h1>
+            
+            <p class="text-lg text-neutral-700 mb-8">
+                Your payment was cancelled and no charges were made to your account.
+            </p>
+
+            <!-- Information Card -->
+            <div class="bg-white rounded-xl shadow-card p-8 mb-8 text-left">
+                <h2 class="text-xl font-bold text-action mb-6 text-center">What Happened?</h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <svg class="w-6 h-6 text-orange-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-neutral-700">
+                                You chose to cancel the payment process before completing your purchase. 
+                                This is completely normal and happens for various reasons.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-100 rounded-lg p-4">
+                        <h3 class="font-semibold text-neutral-800 mb-2">Common reasons for cancellation:</h3>
+                        <ul class="text-neutral-600 space-y-1">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
+                                Need more time to gather voice recordings
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
+                                Want to discuss with family members first
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
+                                Need to review package options
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
+                                Technical issues during checkout
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Reminder -->
+            <div class="bg-accent-light/20 rounded-xl p-6 mb-8">
+                <h3 class="font-semibold text-neutral-800 mb-3">Our Memory Packages</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div class="bg-white rounded-lg p-4">
+                        <h4 class="font-semibold text-action mb-1">Basic Package</h4>
+                        <p class="text-neutral-600 mb-2">$89</p>
+                        <p class="text-neutral-600">1 voice, 10 minutes</p>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 border-2 border-accent">
+                        <h4 class="font-semibold text-action mb-1">Premium Package</h4>
+                        <p class="text-neutral-600 mb-2">$189</p>
+                        <p class="text-neutral-600">1 voice, 30 minutes</p>
+                        <span class="text-xs bg-accent text-white px-2 py-1 rounded-full">Most Popular</span>
+                    </div>
+                    <div class="bg-white rounded-lg p-4">
+                        <h4 class="font-semibold text-action mb-1">Deluxe Package</h4>
+                        <p class="text-neutral-600 mb-2">$269</p>
+                        <p class="text-neutral-600">2 voices, 60 minutes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Section -->
+            <div class="bg-neutral-100 rounded-xl p-6 mb-8">
+                <h3 class="font-semibold text-neutral-800 mb-2">Need Help?</h3>
+                <p class="text-neutral-600 mb-4">
+                    If you experienced technical difficulties or have questions about our packages, 
+                    we're here to help.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:support@memora.com" class="text-action hover:text-action-hover font-semibold">
+                        support@memora.com
+                    </a>
+                    <a href="contact.html" class="text-action hover:text-action-hover font-semibold">
+                        Contact Form
+                    </a>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                    href="index.html#pricing" 
+                    class="bg-action text-white font-semibold py-3 px-8 rounded-lg hover:bg-action-hover transition duration-300 shadow-md hover:shadow-lg"
+                >
+                    Try Again
+                </a>
+                <a 
+                    href="index.html" 
+                    class="bg-white text-action border-2 border-action font-semibold py-3 px-8 rounded-lg hover:bg-action hover:text-white transition duration-300"
+                >
+                    Return Home
+                </a>
+                <a 
+                    href="contact.html" 
+                    class="bg-neutral-100 text-neutral-700 border-2 border-neutral-300 font-semibold py-3 px-8 rounded-lg hover:bg-neutral-200 transition duration-300"
+                >
+                    Get Help
+                </a>
+            </div>
+
+            <!-- Reassurance Message -->
+            <div class="mt-12 text-center">
+                <p class="text-neutral-600">
+                    Your privacy and security are our top priorities. No payment information was stored or processed.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-neutral-200 mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <img src="./src/logo.svg" alt="Memora" class="h-6 w-auto" />
+                    <span class="text-lg font-bold text-action">Memora</span>
+                </div>
+                <p class="text-neutral-600">
+                    &copy; 2025 Memora. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cancel Page Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Optional: Track cancellation for analytics
+            console.log('Payment cancelled - user returned to cancel page');
+            
+            // You could send analytics data here if needed
+        });
+    </script>
+</body>
+</html>

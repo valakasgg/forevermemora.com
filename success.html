@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./src/img/favicon.ico" type="image/svg+xml" />
+    <title>Payment Successful - Memora</title>
+    <meta name="description" content="Thank you for your purchase. Your Memora package has been successfully ordered." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "infinity-blue": "#1E73BE",
+              "deep-navy": "#0D2C54",
+              action: {
+                DEFAULT: "#1E73BE",
+                hover: "#0D2C54",
+              },
+              accent: {
+                DEFAULT: "#0D2C54",
+                hover: "#0a233f",
+                light: "#F9E285",
+              },
+              neutral: {
+                50: "#FAFAF8",
+                100: "#f5f5f2",
+                200: "#ebebea",
+                300: "#d9d9d7",
+                400: "#b0b0ae",
+                500: "#8d8d8b",
+                600: "#6E6E6E",
+                700: "#5a5a5a",
+                800: "#3d3d3d",
+                900: "#212121",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap");
+    </style>
+</head>
+<body class="bg-neutral-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-neutral-200">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="./src/logo.svg" alt="Memora" class="h-8 w-auto" />
+                    <span class="text-xl font-bold text-action">Memora</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16">
+        <div class="max-w-2xl mx-auto text-center">
+            <!-- Success Icon -->
+            <div class="mb-8">
+                <div class="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <h1 class="text-3xl md:text-4xl font-bold text-action mb-4">
+                Payment Successful!
+            </h1>
+            
+            <p class="text-lg text-neutral-700 mb-8">
+                Thank you for your purchase. Your <span id="package-name" class="font-semibold text-action">Memory Package</span> order has been confirmed.
+            </p>
+
+            <!-- Order Details Card -->
+            <div class="bg-white rounded-xl shadow-card p-8 mb-8 text-left">
+                <h2 class="text-xl font-bold text-action mb-6 text-center">Next Steps</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-action text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            1
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-800 mb-2">Check Your Email</h3>
+                            <p class="text-neutral-600">
+                                You'll receive a confirmation email within a few minutes containing your order details and instructions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-action text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            2
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-800 mb-2">Prepare Your Materials</h3>
+                            <p class="text-neutral-600 mb-3">Please gather the following items:</p>
+                            <ul class="text-neutral-600 space-y-1 ml-4">
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
+                                    <strong>Voice Recordings:</strong> Original audio files of your loved one speaking
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
+                                    <strong>Personal Script:</strong> The text you want to hear in their voice
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="w-2 h-2 bg-accent rounded-full mr-2"></span>
+                                    <strong>Package Selection:</strong> Reference your chosen package
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-action text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            3
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-800 mb-2">We Will Be In Touch</h3>
+                            <p class="text-neutral-600 mb-3">
+                                To collect your materials, email your voice recordings and personal script.
+                            </p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-action text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            4
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-neutral-800 mb-2">We'll Create Your Memory</h3>
+                            <p class="text-neutral-600">
+                                Our team will carefully process your materials and create your personalized audio memory. 
+                                You'll receive your completed package within 5-7 business days.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="bg-accent-light/20 rounded-xl p-6 mb-8">
+                <h3 class="font-semibold text-neutral-800 mb-2">Need Help?</h3>
+                <p class="text-neutral-600 mb-3">
+                    If you have any questions or need assistance, please don't hesitate to contact us:
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:support@memora.com" class="text-action hover:text-action-hover font-semibold">
+                        support@memora.com
+                    </a>
+                    <a href="contact.html" class="text-action hover:text-action-hover font-semibold">
+                        Contact Form
+                    </a>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                    href="index.html" 
+                    class="bg-action text-white font-semibold py-3 px-8 rounded-lg hover:bg-action-hover transition duration-300 shadow-md hover:shadow-lg"
+                >
+                    Return Home
+                </a>
+                <a 
+                    href="contact.html" 
+                    class="bg-white text-action border-2 border-action font-semibold py-3 px-8 rounded-lg hover:bg-action hover:text-white transition duration-300"
+                >
+                    Contact Support
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-neutral-200 mt-16">
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <img src="./src/logo.svg" alt="Memora" class="h-6 w-auto" />
+                    <span class="text-lg font-bold text-action">Memora</span>
+                </div>
+                <p class="text-neutral-600">
+                    &copy; 2025 Memora. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Page Script -->
+    <script>
+        // Get package info from URL parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sessionId = urlParams.get('session_id');
+            
+            // You can use the session_id to fetch order details from your backend
+            // For now, we'll just display a generic success message
+            
+            if (sessionId) {
+                console.log('Stripe Session ID:', sessionId);
+                // You could fetch order details here and update the page accordingly
+            }
+        });
+    </script>
+</body>
+</html>
