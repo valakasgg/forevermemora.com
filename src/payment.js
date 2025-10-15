@@ -85,7 +85,7 @@ class MemoraPayments {
 
       // Create checkout session
       const apiBaseUrl = window.MemoraConfig.get('API_BASE_URL');
-      const response = await fetch(`${apiBaseUrl}/create-checkout-session`, {
+      const response = await fetch(`${apiBaseUrl}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
