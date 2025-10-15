@@ -1,36 +1,41 @@
 version: 1
-applications:
-  - appRoot: .
-    frontend:
-      phases:
-        preBuild:
-          commands:
-            - echo "📦 Installing dependencies..."
-            - npm ci
-            - echo "🔧 Setting up environment configuration..."
-            - chmod +x scripts/amplify-build.sh
-            - ./scripts/amplify-build.sh
-        build:
-          commands:
-            - echo "🏗️ Building Memora frontend..."
-            - echo "Current directory:" $(pwd)
-            - echo "Files:" $(ls -la)
-            - echo "✅ Build completed - static files ready"
-        postBuild:
-          commands:
-            - echo "🚀 Post-build cleanup..."
-            - echo "Build artifacts ready for deployment"
-      artifacts:
-        baseDirectory: /
-        files:
-          - '**/*'
-        exclude:
-          - node_modules/**/*
-          - scripts/**/*
-          - .env*
-          - '*.md'
-          - amplify/**/*
-      cache:
-        paths:
-          - node_modules/**/*
-  - appRoot: amplify
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "📦 Installing dependencies..."
+        - npm ci
+        - echo "🔧 Setting up environment configuration..."
+        - chmod +x scripts/amplify-build.sh
+        - ./scripts/amplify-build.sh
+    build:
+      commands:
+        - echo "🏗️ Building Memora frontend..."
+        - echo "Current directory:" $(pwd)
+        - echo "Files:" $(ls -la)
+        - echo "✅ Build completed - static files ready"
+    postBuild:
+      commands:
+        - echo "🚀 Post-build cleanup..."
+        - echo "Build artifacts ready for deployment"
+  artifacts:
+    baseDirectory: /
+    files:
+      - '**/*'
+    exclude:
+      - node_modules/**/*
+      - scripts/**/*
+      - .env*
+      - '*.md'
+      - amplify/**/*
+  cache:
+    paths:
+      - node_modules/**/*
+backend:
+  phases:
+    build:
+      commands:
+        - echo "🏗️ Building Amplify Gen 2 backend..."
+        - npm install -g @aws-amplify/cli
+        - amplify --version
+        - echo "Backend deployment handled by Amplify Gen 2"
