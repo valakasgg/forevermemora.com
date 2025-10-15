@@ -50,13 +50,13 @@ class MemoraConfig {
       },
       production: {
         STRIPE_PUBLISHABLE_KEY: 'pk_test_51PcdRsRxjeA5v92yApzypK2TllczZFLH0XJRmE1udOUd1g6BoqV86M1aAXKlJoydYZ9IWyp6LP2TFqaQXtkhtIjw00zimcQR6p',
-        API_BASE_URL: 'https://prod-api.amazonaws.com/api',
+        API_BASE_URL: 'https://atnmhac3mwwdppifxytc66q7qq0eobes.lambda-url.us-east-1.on.aws',
         DEBUG: false,
         ENVIRONMENT: 'production'
       },
       main: {
         STRIPE_PUBLISHABLE_KEY: 'pk_test_51PcdRsRxjeA5v92yApzypK2TllczZFLH0XJRmE1udOUd1g6BoqV86M1aAXKlJoydYZ9IWyp6LP2TFqaQXtkhtIjw00zimcQR6p',
-        API_BASE_URL: 'https://prod-api.amazonaws.com/api',
+        API_BASE_URL: 'https://atnmhac3mwwdppifxytc66q7qq0eobes.lambda-url.us-east-1.on.aws',
         DEBUG: false,
         ENVIRONMENT: 'main'
       }
