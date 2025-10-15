@@ -1253,7 +1253,6 @@
           
           // Apply all translations using data-translate attributes
           const translateElements = document.querySelectorAll('[data-translate]');
-          console.log('Found elements to translate:', translateElements.length);
           
           translateElements.forEach(el => {
             const key = el.getAttribute('data-translate');
@@ -1266,16 +1265,11 @@
               } else {
                 el.textContent = dict[key];
               }
-              console.log(`Translated ${key}: ${dict[key]}`);
-            } else {
-              console.warn(`Translation missing for key: ${key}`);
             }
           });
           
           // Update language selector display
           updateLanguageDisplay(lang);
-          
-          console.log('Language switched to:', lang);
         }
         
         // Update language display function
@@ -4275,7 +4269,6 @@
               throw new Error(`HTTP error! status: ${response.status}`);
             }
           } catch (error) {
-            console.error("Form submission error:", error);
             alert(
               "There was an error submitting your form. Please try again later."
             );

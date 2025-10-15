@@ -4,7 +4,10 @@
 class LocalDevConfig {
   constructor() {
     this.keys = {};
-    this.loadFromFile();
+    // Only load in development environment
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      this.loadFromFile();
+    }
   }
 
   // Load environment variables from .env.development file

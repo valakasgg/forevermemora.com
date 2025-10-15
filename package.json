@@ -10,6 +10,7 @@
     "dev:simple": "python -m http.server 8000",
     "build": "node scripts/build-config.js production",
     "build:staging": "node scripts/build-config.js staging",
+    "build:production": "node scripts/production-build.js",
     "config": "node scripts/build-config.js",
     "amplify:push": "amplify push",
     "amplify:deploy": "npm run build && amplify publish",
