@@ -4,7 +4,9 @@ frontend:
     preBuild:
       commands:
         - echo "📦 Installing dependencies..."
+        - nvm install 18
         - nvm use 18
+        - node --version
         - npm install
         - echo "🔧 Setting up environment configuration..."
         - chmod +x scripts/amplify-build.sh
