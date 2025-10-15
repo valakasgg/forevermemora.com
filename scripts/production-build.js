@@ -42,6 +42,11 @@ filesToProcess.forEach(filePath => {
     // Fix any syntax issues (remove trailing commas in objects)
     content = content.replace(/,(\s*[}\]])/g, '$1');
     
+    // Fix template literal issues - convert to string concatenation
+    content = content.replace(/`([^`]*)\$\{([^}]+)\}([^`]*)`/g, function(match, before, varName, after) {
+      return "'" + before + "' + " + varName + " + '" + after + "'";
+    });
+    
     // Write the processed file
     fs.writeFileSync(fullPath, content);
     

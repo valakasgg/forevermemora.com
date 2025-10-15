@@ -84,7 +84,7 @@ class MemoraConfig {
 
   log(...args) {
     if (this.config.DEBUG && this.environment !== 'production') {
-      console.log(`[Memora ${this.environment.toUpperCase()}]`, ...args);
+      console.log('[Memora ' + this.environment.toUpperCase() + ']', ...args);
     }
   }
 }

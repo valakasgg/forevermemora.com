@@ -19,12 +19,16 @@ class LocalDevConfig {
         const content = await response.text();
         this.parseEnvFile(content);
         this.injectConfig();
-        console.log('🔐 Secure local config loaded from .env.development');
+        if (this.keys.DEBUG_LOCAL === 'true') {
+          console.log('🔐 Secure local config loaded from .env.development');
+        }
       } else {
         this.loadFallbackConfig();
       }
     } catch (error) {
-      console.log('📁 .env.development not found, using manual config');
+      if (this.keys.DEBUG_LOCAL === 'true') {
+        console.log('📁 .env.development not found, using manual config');
+      }
       this.loadFallbackConfig();
     }
   }
@@ -54,7 +58,9 @@ class LocalDevConfig {
       DEBUG_LOCAL: 'true'
     };
     this.injectConfig();
-    console.log('🔧 Using fallback local config - edit .env.development for your keys');
+    if (this.keys.DEBUG_LOCAL === 'true') {
+      console.log('🔧 Using fallback local config - edit .env.development for your keys');
+    }
   }
 
   injectConfig() {
@@ -111,9 +117,11 @@ class LocalDevConfig {
       // Log current mode for clarity
       const modeEmoji = isLiveMode ? '🔴' : '🧪';
       const modeText = isLiveMode ? 'LIVE' : 'TEST';
-      console.log(`${modeEmoji} Stripe ${modeText} mode activated`);
+      if (this.keys.DEBUG_LOCAL === 'true') {
+        console.log(`${modeEmoji} Stripe ${modeText} mode activated`);
+      }
       
-      if (isLiveMode) {
+      if (isLiveMode && this.keys.DEBUG_LOCAL === 'true') {
         console.warn('⚠️ WARNING: Live mode enabled - real payments will be processed!');
       }
     }
@@ -151,12 +159,16 @@ class LocalDevConfig {
     const modeText = isLiveMode ? 'LIVE' : 'TEST';
 
     if (missing.length > 0) {
-      console.warn(`⚠️ Missing or unconfigured ${modeText} keys:`, missing);
-      console.log('📝 Edit .env.development file with your actual Stripe keys');
+      if (this.keys.DEBUG_LOCAL === 'true') {
+        console.warn(`⚠️ Missing or unconfigured ${modeText} keys:`, missing);
+        console.log('📝 Edit .env.development file with your actual Stripe keys');
+      }
       return false;
     }
 
-    console.log(`✅ All ${modeText} keys configured correctly ${modeEmoji}`);
+    if (this.keys.DEBUG_LOCAL === 'true') {
+      console.log(`✅ All ${modeText} keys configured correctly ${modeEmoji}`);
+    }
     
     // Show which keys are being used
           const activeKeys = window.AWS_AMPLIFY_CONFIG;
