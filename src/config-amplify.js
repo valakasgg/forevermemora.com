@@ -37,22 +37,28 @@ class MemoraConfig {
     
     const baseConfigs = {
       development: {
-        STRIPE_PUBLISHABLE_KEY: 'pk_test_your_development_key_here',
+        STRIPE_PUBLISHABLE_KEY: 'pk_test_51PcdRsRxjeA5v92yApzypK2TllczZFLH0XJRmE1udOUd1g6BoqV86M1aAXKlJoydYZ9IWyp6LP2TFqaQXtkhtIjw00zimcQR6p',
         API_BASE_URL: 'http://localhost:3001/api',
         DEBUG: true,
         ENVIRONMENT: 'development'
       },
       staging: {
-        STRIPE_PUBLISHABLE_KEY: 'pk_test_your_staging_key_here', 
+        STRIPE_PUBLISHABLE_KEY: 'pk_test_51PcdRsRxjeA5v92yApzypK2TllczZFLH0XJRmE1udOUd1g6BoqV86M1aAXKlJoydYZ9IWyp6LP2TFqaQXtkhtIjw00zimcQR6p', 
         API_BASE_URL: 'https://staging-api.amazonaws.com/api',
         DEBUG: true,
         ENVIRONMENT: 'staging'
       },
       production: {
-        STRIPE_PUBLISHABLE_KEY: 'pk_live_your_production_key_here',
+        STRIPE_PUBLISHABLE_KEY: 'pk_test_51PcdRsRxjeA5v92yApzypK2TllczZFLH0XJRmE1udOUd1g6BoqV86M1aAXKlJoydYZ9IWyp6LP2TFqaQXtkhtIjw00zimcQR6p',
         API_BASE_URL: 'https://prod-api.amazonaws.com/api',
         DEBUG: false,
         ENVIRONMENT: 'production'
+      },
+      main: {
+        STRIPE_PUBLISHABLE_KEY: 'pk_test_51PcdRsRxjeA5v92yApzypK2TllczZFLH0XJRmE1udOUd1g6BoqV86M1aAXKlJoydYZ9IWyp6LP2TFqaQXtkhtIjw00zimcQR6p',
+        API_BASE_URL: 'https://prod-api.amazonaws.com/api',
+        DEBUG: false,
+        ENVIRONMENT: 'main'
       }
     };
 
