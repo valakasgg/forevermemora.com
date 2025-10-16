@@ -24,60 +24,89 @@ class SimpleMemoraPayments {
     }
   }
 
-  async handlePurchase(packageType) {
+  getCustomerEmail() {
+    // Try to get customer email from any form on the page
+    const emailInput = document.querySelector('input[type="email"]');
+    const email = emailInput ? emailInput.value.trim() : '';
+    
+    // Return null if email is empty or invalid
+    if (!email || !email.includes('@')) {
+      return null;
+    }
+    
+    return email;
+  }
+
+  async handlePurchase(packageName) {
     if (this.isProcessing) return;
     
-    console.log(`Starting purchase for ${packageType} package`);
+    console.log(`Starting purchase for ${packageName} package`);
     
-    // Package configurations
+    // Package configurations - handle both old and new formats
     const packages = {
-      basic: {
+      'basic': {
         name: 'Basic Memory Package',
         price: 5000, // $50.00 in cents
         description: '1 person, up to 10 minutes'
       },
-      premium: {
+      'premium': {
         name: 'Premium Memory Package', 
         price: 10000, // $100.00 in cents
         description: '1 person, up to 30 minutes'
       },
-      deluxe: {
+      'deluxe': {
         name: 'Deluxe Memory Package',
         price: 15000, // $150.00 in cents
+        description: '2 people, up to 60 minutes'
+      },
+      'Basic Memory Package': {
+        name: 'Basic Memory Package',
+        price: 5000,
+        description: '1 person, up to 10 minutes'
+      },
+      'Premium Memory Package': {
+        name: 'Premium Memory Package', 
+        price: 10000,
+        description: '1 person, up to 30 minutes'
+      },
+      'Deluxe Memory Package': {
+        name: 'Deluxe Memory Package',
+        price: 15000,
         description: '2 people, up to 60 minutes'
       }
     };
 
-    const packageConfig = packages[packageType];
+    const packageConfig = packages[packageName];
     if (!packageConfig) {
-      alert('Invalid package type');
+      console.error('Package not found:', packageName);
+      alert(`Invalid package type: ${packageName}`);
       return;
     }
 
     this.isProcessing = true;
 
     try {
-      // Create checkout session directly with Stripe
-      const { error } = await this.stripe.redirectToCheckout({
+      // Get customer email if available
+      const customerEmail = this.getCustomerEmail();
+      
+      // Create checkout session options
+      const checkoutOptions = {
         lineItems: [{
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: packageConfig.name,
-              description: packageConfig.description,
-            },
-            unit_amount: packageConfig.price,
-          },
+          price: 'price_1SGhjVRxjeA5v92yEoHzIWpQ', // Use your existing price ID
           quantity: 1,
         }],
         mode: 'payment',
         successUrl: `${window.location.origin}/success.html?session_id={CHECKOUT_SESSION_ID}`,
         cancelUrl: `${window.location.origin}/cancel.html`,
-        metadata: {
-          package_type: packageType,
-          package_name: packageConfig.name,
-        },
-      });
+      };
+      
+      // Only add customerEmail if it's valid
+      if (customerEmail) {
+        checkoutOptions.customerEmail = customerEmail;
+      }
+      
+      // Create checkout session directly with Stripe
+      const { error } = await this.stripe.redirectToCheckout(checkoutOptions);
 
       if (error) {
         throw new Error(error.message);
